@@ -1,4 +1,4 @@
-package java½»Í¨µÆ;
+package javaäº¤é€šç¯;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -17,63 +17,63 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
- * @¸ÃÀàÖ÷ÒªÊÇ¶ÔµØÍ¼½øĞĞÉè¼Æ£¬°üÀ¨Æô¶¯µÆ×é*/
+ * @è¯¥ç±»ä¸»è¦æ˜¯å¯¹åœ°å›¾è¿›è¡Œè®¾è®¡ï¼ŒåŒ…æ‹¬å¯åŠ¨ç¯ç»„*/
 	@SuppressWarnings("serial")
 public class MyCanvas extends JPanel implements ActionListener,MouseListener,MouseMotionListener{
-/**********************************³ÉÔ±±äÁ¿Çø***************************************************/
-		JButton start=new JButton("statrt");//Æô¶¯µÆ×éµÄ°´Å¥
-		JButton stop=new JButton("stop");//ÔİÍ£µÆ×éµÄ°´Å¥
-		//ËÄ×éµÆ×é£¬Ö®ËùÒÔÄÜ¹»½«µÆ×éÊµÀı»¯·ÅÔÚµ¥¶ÀµÆÊµÀı»¯Ç°ÃæÊÇÒòÎªµ¥¶ÀµÆµÄĞŞÊÎ·ûÊÇstaticµÄ£¬ÔÚÀàÊµÀı»¯Ö®Ç°¾ÍÓĞÁË·ÖÅäµÄÄÚ´æ
+/**********************************æˆå‘˜å˜é‡åŒº***************************************************/
+		JButton start=new JButton("statrt");//å¯åŠ¨ç¯ç»„çš„æŒ‰é’®
+		JButton stop=new JButton("stop");//æš‚åœç¯ç»„çš„æŒ‰é’®
+		//å››ç»„ç¯ç»„ï¼Œä¹‹æ‰€ä»¥èƒ½å¤Ÿå°†ç¯ç»„å®ä¾‹åŒ–æ”¾åœ¨å•ç‹¬ç¯å®ä¾‹åŒ–å‰é¢æ˜¯å› ä¸ºå•ç‹¬ç¯çš„ä¿®é¥°ç¬¦æ˜¯staticçš„ï¼Œåœ¨ç±»å®ä¾‹åŒ–ä¹‹å‰å°±æœ‰äº†åˆ†é…çš„å†…å­˜
 	 	LightControl LightControl1=new LightControl(light_N_right,light_N_middle,light_N_left,"NS",'N',10);
 	 	LightControl LightControl2=new LightControl(light_S_left,light_S_middle,light_S_right,"NS",'S',10);
 	 	LightControl LightControl3=new LightControl(light_E_right,light_E_middle,light_E_left,"WE",'E',20);
 	 	LightControl LightControl4=new LightControl(light_W_left,light_W_middle,light_W_right,"WE",'W',20);
-	 	//Ïß³Ì¶ÔÏó
+	 	//çº¿ç¨‹å¯¹è±¡
 			Thread f1=new Thread(LightControl1);
 		 	Thread f2=new Thread(LightControl2);
 		 	Thread f3=new Thread(LightControl3);
 		 	Thread f4=new Thread(LightControl4);
-/**********************************³ÉÔ±±äÁ¿Çø***************************************************/
+/**********************************æˆå‘˜å˜é‡åŒº***************************************************/
 		
-/**********************************Àà(¹²Ïí)±äÁ¿Çø***************************************************/
-		 //Ê®¶ş¸öµÆ
-		 //±±µÆ
+/**********************************ç±»(å…±äº«)å˜é‡åŒº***************************************************/
+		 //åäºŒä¸ªç¯
+		 //åŒ—ç¯
 	 	static Light light_N_left=new Light(0,0,Light.light_green);
 	 	static Light light_N_middle=new Light(50,0,Light.light_green);
 	 	static Light light_N_right=new Light(100,0,Light.light_red);
-	 	//ÄÏµÆ
+	 	//å—ç¯
 	 	static Light light_S_left=new Light(50,0,Light.light_red);
 	 	static Light light_S_middle=new Light(100,0,Light.light_green);
 	 	static Light light_S_right=new Light(150,0,Light.light_green);
-	 	//¶«µÆ
+	 	//ä¸œç¯
 	 	static Light light_E_left=new Light(0,0,Light.light_green);
 	 	static Light light_E_middle=new Light(0,50,Light.light_red);
 	 	static Light light_E_right=new Light(0,100,Light.light_red);
-	 	//Î÷µÆ
+	 	//è¥¿ç¯
 	 	static Light light_W_left=new Light(0,50,Light.light_red);
 	 	static Light light_W_middle=new Light(0,100,Light.light_red);
 	 	static Light light_W_right=new Light(0,150,Light.light_green);
-/**********************************Àà(¹²Ïí)±äÁ¿Çø***************************************************/
+/**********************************ç±»(å…±äº«)å˜é‡åŒº***************************************************/
 			
-	 	/**¹¹Ôì·½·¨*/
+	 	/**æ„é€ æ–¹æ³•*/
 MyCanvas(){
 	
-			//Ìí¼ÓÊó±ê¼àÌıÊÇÒòÎª·½±ã²é¿´Õâ¸ö´°ÌåµÄÃ¿¸öµãµÄ×ø±ê
+			//æ·»åŠ é¼ æ ‡ç›‘å¬æ˜¯å› ä¸ºæ–¹ä¾¿æŸ¥çœ‹è¿™ä¸ªçª—ä½“çš„æ¯ä¸ªç‚¹çš„åæ ‡
 		    addMouseListener(this);
 		    addMouseMotionListener(this);
-			//Á½¸ö°´Å¥
+			//ä¸¤ä¸ªæŒ‰é’®
 			start.addActionListener(this);
 			start.setBounds(30, 30, 80, 30);
 			this.add(start);
 			stop.addActionListener(this);
 			stop.setBounds(30, 70, 80, 30);
 			this.add(stop);
-			//ÉèÖÃµÆ×éÔÚÃæ°åµÄÎ»ÖÃ
+			//è®¾ç½®ç¯ç»„åœ¨é¢æ¿çš„ä½ç½®
 	 	 	LightControl1.setBounds(405, 305, 200,50);//N
 	 	 	LightControl2.setBounds(495, 545,200,50);//S
 	 	 	LightControl3.setBounds(645, 305, 50,200);//E
 	 	 	LightControl4.setBounds(405, 395, 50,200);//W
-	 	 	//Ìí¼ÓËÄ¸öµÆ×é
+	 	 	//æ·»åŠ å››ä¸ªç¯ç»„
  	 	 	this.add(LightControl1);
  	 	 	this.add(LightControl2);
  	 	 	this.add(LightControl3);
@@ -82,41 +82,41 @@ MyCanvas(){
 		}
 	public void paint(Graphics g) {
 		Graphics2D G=(Graphics2D)g;
-		//--------------------ÉèÖÃ»­±Ê´óĞ¡-----------------------
+		//--------------------è®¾ç½®ç”»ç¬”å¤§å°-----------------------
 		BasicStroke bs1=new BasicStroke(3.0f);
 		BasicStroke bs2=new BasicStroke(5.0f);
 		BasicStroke bs3 = new BasicStroke(5.0f, BasicStroke.CAP_BUTT,BasicStroke.JOIN_ROUND, 2.0f, new float[] { 10, 10, }, 0f);
 		BasicStroke bs4=new BasicStroke(5.0f);
-		//ÖĞĞÄ¾ØĞÎ
+		//ä¸­å¿ƒçŸ©å½¢
 		Rectangle2D Rectangle=new Rectangle2D.Double(400,300,300,300);
 		G.setStroke(bs1);
 		G.setColor(Color.WHITE);
 		G.draw(Rectangle);
-		//---------------------»­ÂÌÉ«²İÆº-----------------------
-		//Ç°Á½¸ö²ÎÊıÒ»¶¨ÒªÊÇ×óÉÏ½ÇÎ»ÖÃ
+		//---------------------ç”»ç»¿è‰²è‰åª-----------------------
+		//å‰ä¸¤ä¸ªå‚æ•°ä¸€å®šè¦æ˜¯å·¦ä¸Šè§’ä½ç½®
 		G.setColor(new Color(14,84,12));
 		G.fillRect(0, 0, 400, 300);
 		G.fillRect(0, 600,400,300);
 		G.fillRect(700,600,500,300);
 		G.fillRect(700, 0, 500, 300);
-		//---------------------»­»ÆÉ«ÊµÏß------------------------
-		//ÄÏ»ÆÏß
+		//---------------------ç”»é»„è‰²å®çº¿------------------------
+		//å—é»„çº¿
 		Line2D line_south1=new Line2D.Double(400, 600, 400, 900);
 		Line2D line_south2=new Line2D.Double(550, 600, 550,900);
 		Line2D line_south3=new Line2D.Double(700, 600, 700, 900);
-		//¶«»ÆÏß
+		//ä¸œé»„çº¿
 		Line2D line_east1=new Line2D.Double(700, 600, 1200, 600);
 		Line2D line_east2=new Line2D.Double(700,450,1200,450);
 		Line2D line_east3=new Line2D.Double(700, 300, 1200, 300);
-		//±±»ÆÏß
+		//åŒ—é»„çº¿
 		Line2D line_north1=new Line2D.Double(700, 300, 700, 0);
 		Line2D line_north2=new Line2D.Double(550, 300, 550, 0);
 		Line2D line_north3=new Line2D.Double(400, 300, 400, 0);
-		//Î÷»ÆÏß
+		//è¥¿é»„çº¿
 		Line2D line_west1=new Line2D.Double(400, 300, 0, 300);
 		Line2D line_west2=new Line2D.Double(400, 450, 0, 450);
 		Line2D line_west3=new Line2D.Double(400, 600, 0, 600);
-		//-----------------ÉèÖÃ»­±ÊÊôĞÔ²¢Ìí¼Ó»ÆÉ«ÊµÏÖ----------
+		//-----------------è®¾ç½®ç”»ç¬”å±æ€§å¹¶æ·»åŠ é»„è‰²å®ç°----------
 		G.setStroke(bs2);
 		G.setColor(Color.YELLOW);
 		G.draw(line_west1);
@@ -131,135 +131,135 @@ MyCanvas(){
 		G.draw(line_east2);
 		G.draw(line_south2);
 		G.draw(line_west2);
-		//------------------------»­»ÆÉ«ĞéÏß----------------
+		//------------------------ç”»é»„è‰²è™šçº¿----------------
 		Line2D dashed_line_north=new Line2D.Double(540, 300, 540, 230);
         G.setStroke(bs3);
         G.setColor(Color.yellow);
-        G.draw(dashed_line_north);//±±ĞéÏß
+        G.draw(dashed_line_north);//åŒ—è™šçº¿
         Line2D line_north=new Line2D.Double(540, 220, 540, 0);
         G.setStroke(bs2);
         G.setColor(Color.yellow);
-        G.draw(line_north);//±±ÊµÏß
+        G.draw(line_north);//åŒ—å®çº¿
         
 		Line2D dashed_line_west=new Line2D.Double(400, 460, 330, 460);
         G.setStroke(bs3);
         G.setColor(Color.yellow);
-        G.draw(dashed_line_west);//ĞéÏß2
+        G.draw(dashed_line_west);//è™šçº¿2
         Line2D line_west=new Line2D.Double(320, 460, 0, 460);
         G.setStroke(bs2);
         G.setColor(Color.yellow);
-        G.draw(line_west);//ÊµÏß2
+        G.draw(line_west);//å®çº¿2
         
         Line2D dashed_line_south=new Line2D.Double(560, 600, 560, 670);
         G.setStroke(bs3);
         G.setColor(Color.yellow);
-        G.draw(dashed_line_south);//ĞéÏß3
+        G.draw(dashed_line_south);//è™šçº¿3
         Line2D line_south=new Line2D.Double(560, 680, 560, 900);
         G.setStroke(bs2);
         G.setColor(Color.yellow);
-        G.draw(line_south);//ÊµÏß3
+        G.draw(line_south);//å®çº¿3
         
         Line2D dashed_line_east=new Line2D.Double(700, 440, 770, 440);
         G.setStroke(bs3);
         G.setColor(Color.yellow);
-        G.draw(dashed_line_east);//ĞéÏß4
+        G.draw(dashed_line_east);//è™šçº¿4
         Line2D line_east=new Line2D.Double(780, 440, 1200, 440);
         G.setStroke(bs2);
         G.setColor(Color.yellow);
-        G.draw(line_east);//ÊµÏß4
-        //-------------------------------»­°×Ïß----------------
-        //µÚÒ»×é,ÄÏ°×Ïß
+        G.draw(line_east);//å®çº¿4
+        //-------------------------------ç”»ç™½çº¿----------------
+        //ç¬¬ä¸€ç»„,å—ç™½çº¿
         Line2D line21=new Line2D.Double(450,600,450,900);
 		Line2D line22=new Line2D.Double(500,600,500,900);
 		Line2D line23=new Line2D.Double(600, 600, 600,900);
 		Line2D line24=new Line2D.Double(650, 600, 650,900);
 		G.setStroke(bs4);
 		G.setColor(Color.WHITE);
-		G.draw(line21);//°×Ïß1
-		G.draw(line22);//°×Ïß2
-		G.draw(line23);//°×Ïß3
-		G.draw(line24);//°×Ïß4
-		//µÚ¶ş×é,¶«°×Ïß
+		G.draw(line21);//ç™½çº¿1
+		G.draw(line22);//ç™½çº¿2
+		G.draw(line23);//ç™½çº¿3
+		G.draw(line24);//ç™½çº¿4
+		//ç¬¬äºŒç»„,ä¸œç™½çº¿
 		Line2D line25=new Line2D.Double(700,350,1200,350);
 		Line2D line26=new Line2D.Double(700,400,1200,400);
 		Line2D line27=new Line2D.Double(700,500,1200,500);
 		Line2D line28=new Line2D.Double(700,550,1200,550);
 		G.setStroke(bs4);
 		G.setColor(Color.WHITE);
-		G.draw(line25);//°×Ïß1
-		G.draw(line26);//°×Ïß2
-		G.draw(line27);//°×Ïß3
-		G.draw(line28);//°×Ïß4
-		//µÚÈı×é£¬±±°×Ïß
+		G.draw(line25);//ç™½çº¿1
+		G.draw(line26);//ç™½çº¿2
+		G.draw(line27);//ç™½çº¿3
+		G.draw(line28);//ç™½çº¿4
+		//ç¬¬ä¸‰ç»„ï¼ŒåŒ—ç™½çº¿
 		Line2D line29=new Line2D.Double(450,300,450,0);
 		Line2D line30=new Line2D.Double(500,300,500,0);
 		Line2D line31=new Line2D.Double(600,300,600,0);
 		Line2D line32=new Line2D.Double(650,300,650,0);
 		G.setStroke(bs4);
 		G.setColor(Color.WHITE);
-		G.draw(line29);//°×Ïß1
-		G.draw(line30);//°×Ïß2
-		G.draw(line31);//°×Ïß3
-		G.draw(line32);//°×Ïß4
-		//µÚËÄ×é£¬Î÷°×Ïß
+		G.draw(line29);//ç™½çº¿1
+		G.draw(line30);//ç™½çº¿2
+		G.draw(line31);//ç™½çº¿3
+		G.draw(line32);//ç™½çº¿4
+		//ç¬¬å››ç»„ï¼Œè¥¿ç™½çº¿
 		Line2D line33=new Line2D.Double(400,350,0,350);
 		Line2D line34=new Line2D.Double(400,400,0,400);
 		Line2D line35=new Line2D.Double(400,500,0,500);
 		Line2D line36=new Line2D.Double(400,550,0,550);
 		G.setStroke(bs4);
 		G.setColor(Color.WHITE);
-		G.draw(line33);//°×Ïß1
-		G.draw(line34);//°×Ïß2
-		G.draw(line35);//°×Ïß3
-		G.draw(line36);//°×Ïß4
-		//-------------------------Ğ´ÌáÊ¾ÎÄ×Ö----------
-		//ÉèÖÃ×ÖÌå
-		Font font1=new Font("ËÎÌå",Font.BOLD,50);
-		Font font2=new Font("ËÎÌå",Font.BOLD,20);
+		G.draw(line33);//ç™½çº¿1
+		G.draw(line34);//ç™½çº¿2
+		G.draw(line35);//ç™½çº¿3
+		G.draw(line36);//ç™½çº¿4
+		//-------------------------å†™æç¤ºæ–‡å­—----------
+		//è®¾ç½®å­—ä½“
+		Font font1=new Font("å®‹ä½“",Font.BOLD,50);
+		Font font2=new Font("å®‹ä½“",Font.BOLD,20);
 		G.setColor(Color.white);
 		G.setFont(font1);
-		G.drawString("Ê®×ÖÂ·¿Ú", 700, 60);
+		G.drawString("åå­—è·¯å£", 700, 60);
 		G.setFont(font2);
-		G.drawString("1.×ó×ª£º×ó×ªºìµÆÍ£Ö¹£¬×ó×ªÂÌµÆ×ó×ª", 750, 100);
-		G.drawString("2.Ö±ĞĞ£ºÖ±ĞĞºìµÆÍ£Ö¹£¬Ö±ĞĞÂÌµÆÍ¨ĞĞ", 750, 140);
-		G.drawString("3.ÓÒ×ª£º³£ÂÌ", 750, 180);
+		G.drawString("1.å·¦è½¬ï¼šå·¦è½¬çº¢ç¯åœæ­¢ï¼Œå·¦è½¬ç»¿ç¯å·¦è½¬", 750, 100);
+		G.drawString("2.ç›´è¡Œï¼šç›´è¡Œçº¢ç¯åœæ­¢ï¼Œç›´è¡Œç»¿ç¯é€šè¡Œ", 750, 140);
+		G.drawString("3.å³è½¬ï¼šå¸¸ç»¿", 750, 180);
 		Toolkit toolkit=getToolkit();
-	    //-------------------------µÚÒ»×éÍ¼Æ¬------------
-	    Image img1=toolkit.getImage("src/Í¼Æ¬/1.1.png");
+	    //-------------------------ç¬¬ä¸€ç»„å›¾ç‰‡------------
+	    Image img1=toolkit.getImage("src/å›¾ç‰‡/1.1.png");
 	    G.drawImage(img1, 545, 625,70,130,this);
-	    Image img2=toolkit.getImage("src/Í¼Æ¬/1.2.png");
+	    Image img2=toolkit.getImage("src/å›¾ç‰‡/1.2.png");
 	    G.drawImage(img2, 590, 650,70,70,this);
-	    Image img3=toolkit.getImage("src/Í¼Æ¬/1.3.png");
+	    Image img3=toolkit.getImage("src/å›¾ç‰‡/1.3.png");
 	    G.drawImage(img3, 640, 625,70,130,this);
-	    //--------------------------µÚ¶ş×éÍ¼Æ¬-----------
-	    Image img4=toolkit.getImage("src/Í¼Æ¬/2.1.png");
+	    //--------------------------ç¬¬äºŒç»„å›¾ç‰‡-----------
+	    Image img4=toolkit.getImage("src/å›¾ç‰‡/2.1.png");
 	    G.drawImage(img4, 735, 385,130,70,this);
-	    Image img5=toolkit.getImage("src/Í¼Æ¬/2.2.png");
+	    Image img5=toolkit.getImage("src/å›¾ç‰‡/2.2.png");
 	    G.drawImage(img5, 760, 340,70,70,this);
-	    Image img6=toolkit.getImage("src/Í¼Æ¬/2.3.png");
+	    Image img6=toolkit.getImage("src/å›¾ç‰‡/2.3.png");
 	    G.drawImage(img6, 735, 290,130,70,this);
-	    //--------------------------µÚÈı×éÍ¼Æ¬-----------
-	    Image img7=toolkit.getImage("src/Í¼Æ¬/3.1.png");
+	    //--------------------------ç¬¬ä¸‰ç»„å›¾ç‰‡-----------
+	    Image img7=toolkit.getImage("src/å›¾ç‰‡/3.1.png");
 	    G.drawImage(img7, 485, 140,70,130,this);
-	    Image img8=toolkit.getImage("src/Í¼Æ¬/3.2.png");
+	    Image img8=toolkit.getImage("src/å›¾ç‰‡/3.2.png");
 	    G.drawImage(img8, 440, 175,70,70,this);
-	    Image img9=toolkit.getImage("src/Í¼Æ¬/3.3.png");
+	    Image img9=toolkit.getImage("src/å›¾ç‰‡/3.3.png");
 	    G.drawImage(img9, 390, 140,70,130,this);
-	    //---------------------------µÚËÄ×éÍ¼Æ¬----------
-	    Image img10=toolkit.getImage("src/Í¼Æ¬/4.1.png");
+	    //---------------------------ç¬¬å››ç»„å›¾ç‰‡----------
+	    Image img10=toolkit.getImage("src/å›¾ç‰‡/4.1.png");
 	    G.drawImage(img10, 240, 445,130,70,this);
-	    Image img11=toolkit.getImage("src/Í¼Æ¬/4.2.png");
+	    Image img11=toolkit.getImage("src/å›¾ç‰‡/4.2.png");
 	    G.drawImage(img11, 275, 490,70,70,this);
-	    Image img12=toolkit.getImage("src/Í¼Æ¬/4.3.png");
+	    Image img12=toolkit.getImage("src/å›¾ç‰‡/4.3.png");
 	    G.drawImage(img12, 240, 540,130,70,this);
 
-//#####################################Í¨¹ıµ÷ÓÃÌí¼Ó×Ü³µµÄ¼¯ºÏlist_all»­³µ######################################################################
+//#####################################é€šè¿‡è°ƒç”¨æ·»åŠ æ€»è½¦çš„é›†åˆlist_allç”»è½¦######################################################################
 for (int j = 0; j <Main.list_all.size(); j++) { 
 		if(Main.list_all.get(j).road=="S2W"||Main.list_all.get(j).road=="S2N"||
 				Main.list_all.get(j).road=="S2E"||Main.list_all.get(j).road=="N2E"||
 						Main.list_all.get(j).road=="N2S"||Main.list_all.get(j).road=="N2W") {
-//##############################################ÅĞ¶ÏÄÏ±±ÊÇ·ñ×ó×ª################################################
-					//ÕâÀïµÄÅĞ¶ÏºÜÓĞ±ØÒª£¬×¢ÒâbooleanÀàĞÍµÄ±äÁ¿µÄ³õÊ¼ÖµÊÇfalse
+//##############################################åˆ¤æ–­å—åŒ—æ˜¯å¦å·¦è½¬################################################
+					//è¿™é‡Œçš„åˆ¤æ–­å¾ˆæœ‰å¿…è¦ï¼Œæ³¨æ„booleanç±»å‹çš„å˜é‡çš„åˆå§‹å€¼æ˜¯false
 					if(Main.list_all.get(j).turn_right==false&&Main.list_all.get(j).turn_left==false){
 						G.drawImage(getToolkit().getImage(Main.list_all.get(j).car_img), Main.list_all.get(j).x1, Main.list_all.get(j).y1, Car.car_width, Car.car_height, this);
 					}else if(Main.list_all.get(j).turn_left==true) {
@@ -267,10 +267,10 @@ for (int j = 0; j <Main.list_all.size(); j++) {
 						G.drawImage(getToolkit().getImage(Main.list_all.get(j).car_img), Main.list_all.get(j).x1, Main.list_all.get(j).y1, Car.car_width, Car.car_height, this);
 						G.rotate(Math.toRadians(Main.list_all.get(j).rotation_angle),Main.list_all.get(j).x1,Main.list_all.get(j).y1);
 					}
-//##############################################ÅĞ¶ÏÄÏ±±ÊÇ·ñ×ó×ª################################################
+//##############################################åˆ¤æ–­å—åŒ—æ˜¯å¦å·¦è½¬################################################
 					
-//##############################################ÅĞ¶ÏÄÏ±±ÊÇ·ñÓÒ×ª################################################
-					//ÕâÀïµÄÅĞ¶ÏºÜÓĞ±ØÒª£¬×¢ÒâbooleanÀàĞÍµÄ±äÁ¿µÄ³õÊ¼ÖµÊÇfalse
+//##############################################åˆ¤æ–­å—åŒ—æ˜¯å¦å³è½¬################################################
+					//è¿™é‡Œçš„åˆ¤æ–­å¾ˆæœ‰å¿…è¦ï¼Œæ³¨æ„booleanç±»å‹çš„å˜é‡çš„åˆå§‹å€¼æ˜¯false
 					if(Main.list_all.get(j).turn_right==false&&Main.list_all.get(j).turn_left==false) {
 						G.drawImage(getToolkit().getImage(Main.list_all.get(j).car_img), Main.list_all.get(j).x1, Main.list_all.get(j).y1, Car.car_width, Car.car_height, this);
 					}else if(Main.list_all.get(j).turn_right==true) {
@@ -278,12 +278,12 @@ for (int j = 0; j <Main.list_all.size(); j++) {
 						G.drawImage(getToolkit().getImage(Main.list_all.get(j).car_img), Main.list_all.get(j).x1, Main.list_all.get(j).y1, Car.car_width, Car.car_height, this);
 						G.rotate(Math.toRadians(-90),Main.list_all.get(j).x1,Main.list_all.get(j).y1);
 					}
-//##############################################ÅĞ¶ÏÄÏ±±ÊÇ·ñÓÒ×ª################################################
-					}//ifÅĞ¶Ï½áÊø
+//##############################################åˆ¤æ–­å—åŒ—æ˜¯å¦å³è½¬################################################
+					}//ifåˆ¤æ–­ç»“æŸ
 
 					else {
- //##############################################ÅĞ¶Ï¶«Î÷ÊÇ·ñ×ó×ª################################################
-						    //ÕâÀïµÄÅĞ¶ÏºÜÓĞ±ØÒª£¬×¢ÒâbooleanÀàĞÍµÄ±äÁ¿µÄ³õÊ¼ÖµÊÇfalse
+ //##############################################åˆ¤æ–­ä¸œè¥¿æ˜¯å¦å·¦è½¬################################################
+						    //è¿™é‡Œçš„åˆ¤æ–­å¾ˆæœ‰å¿…è¦ï¼Œæ³¨æ„booleanç±»å‹çš„å˜é‡çš„åˆå§‹å€¼æ˜¯false
 							if(Main.list_all.get(j).turn_right==false&&Main.list_all.get(j).turn_left==false){
 								G.drawImage(getToolkit().getImage(Main.list_all.get(j).car_img), Main.list_all.get(j).x1, Main.list_all.get(j).y1, Car.car_height, Car.car_width, this);
 							}else if(Main.list_all.get(j).turn_left==true) {
@@ -292,12 +292,12 @@ for (int j = 0; j <Main.list_all.size(); j++) {
 								G.rotate(Math.toRadians(Main.list_all.get(j).rotation_angle),Main.list_all.get(j).x1,Main.list_all.get(j).y1);
 								
 							}
-//##############################################ÅĞ¶Ï¶«Î÷ÊÇ·ñ×ó×ª################################################
+//##############################################åˆ¤æ–­ä¸œè¥¿æ˜¯å¦å·¦è½¬################################################
 							
-//##############################################ÅĞ¶Ï¶«Î÷ÊÇ·ñÓÒ×ª################################################
-							//ÕâÀïµÄÅĞ¶ÏºÜÓĞ±ØÒª£¬×¢ÒâbooleanÀàĞÍµÄ±äÁ¿µÄ³õÊ¼ÖµÊÇfalse
+//##############################################åˆ¤æ–­ä¸œè¥¿æ˜¯å¦å³è½¬################################################
+							//è¿™é‡Œçš„åˆ¤æ–­å¾ˆæœ‰å¿…è¦ï¼Œæ³¨æ„booleanç±»å‹çš„å˜é‡çš„åˆå§‹å€¼æ˜¯false
 							if(Main.list_all.get(j).turn_right==false&&Main.list_all.get(j).turn_left==false) {
-								//ÕâÌõÓï¾ä×ÜÊÇ»áÅ×³öÒì³££¬µÃ²é¿´ÏÂ
+								//è¿™æ¡è¯­å¥æ€»æ˜¯ä¼šæŠ›å‡ºå¼‚å¸¸ï¼Œå¾—æŸ¥çœ‹ä¸‹
 								G.drawImage(getToolkit().getImage(Main.list_all.get(j).car_img), Main.list_all.get(j).x1, Main.list_all.get(j).y1, Car.car_height, Car.car_width, this);
 						    }else if(Main.list_all.get(j).turn_right==true) {
 						    	G.rotate(Math.toRadians(90),Main.list_all.get(j).x1,Main.list_all.get(j).y1);
@@ -305,14 +305,14 @@ for (int j = 0; j <Main.list_all.size(); j++) {
 								G.rotate(Math.toRadians(-90),Main.list_all.get(j).x1,Main.list_all.get(j).y1);
 						    }
 					}
-//##############################################ÅĞ¶Ï¶«Î÷ÊÇ·ñÓÒ×ª################################################
+//##############################################åˆ¤æ–­ä¸œè¥¿æ˜¯å¦å³è½¬################################################
 	
-	}//forÑ­»·½áÊø
-	}//paint()½áÊø
+	}//forå¾ªç¯ç»“æŸ
+	}//paint()ç»“æŸ
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==start) {
-			//Æô¶¯ËÄ×éµÆ
+			//å¯åŠ¨å››ç»„ç¯
 			LightControl.RUN=true;
 		 	f1.start();
 		 	f2.start();
@@ -325,7 +325,7 @@ for (int j = 0; j <Main.list_all.size(); j++) {
 			LightControl.RUN=false;
 	 	}
 		
-	}//actionPerformed·½·¨½áÊø
+	}//actionPerformedæ–¹æ³•ç»“æŸ
 
 	@Override
 	public void mouseClicked(java.awt.event.MouseEvent e) {	
@@ -351,30 +351,30 @@ for (int j = 0; j <Main.list_all.size(); j++) {
 	@Override
 	public void mouseMoved(java.awt.event.MouseEvent e) {
 }
-//	/**ÉèÖÃÃæ°åµÄµ¯³öÊ½²Ëµ¥*/
+//	/**è®¾ç½®é¢æ¿çš„å¼¹å‡ºå¼èœå•*/
 //	public void popmenu() {
-//		ButtonGroup buttongroup = new ButtonGroup();//´´½¨Ò»¸ö°´Å¥×é
-//	JPopupMenu popup  = new JPopupMenu();//´´½¨Ò»¸öµ¯³öÊ½²Ëµ¥
-//	JPanel poppanel = new JPanel();//´´½¨Ò»¸öÃæ°å
-//	JMenu Vel_menu=new JMenu("Ê±¼äÑ¡Ôñ");//´´½¨Ò»¸ö¡°ËÙ¶ÈÑ¡Ôñ¡±²Ëµ¥
-//	JMenuItem start_menu=new JMenuItem("¿ªÊ¼");//´´½¨Ò»¸ö¡°¿ªÊ¼¡±²Ëµ¥Ïî
-//	JMenuItem stop_menu=new JMenuItem("Í£Ö¹");//´´½¨Ò»¸ö¡°Í£Ö¹¡±²Ëµ¥Ïî
-//		JRadioButtonMenuItem T_50 = new JRadioButtonMenuItem("Ê±¼äX2",true);
-//		JRadioButtonMenuItem T_25 = new JRadioButtonMenuItem("Ê±¼äX4");
+//		ButtonGroup buttongroup = new ButtonGroup();//åˆ›å»ºä¸€ä¸ªæŒ‰é’®ç»„
+//	JPopupMenu popup  = new JPopupMenu();//åˆ›å»ºä¸€ä¸ªå¼¹å‡ºå¼èœå•
+//	JPanel poppanel = new JPanel();//åˆ›å»ºä¸€ä¸ªé¢æ¿
+//	JMenu Vel_menu=new JMenu("æ—¶é—´é€‰æ‹©");//åˆ›å»ºä¸€ä¸ªâ€œé€Ÿåº¦é€‰æ‹©â€èœå•
+//	JMenuItem start_menu=new JMenuItem("å¼€å§‹");//åˆ›å»ºä¸€ä¸ªâ€œå¼€å§‹â€èœå•é¡¹
+//	JMenuItem stop_menu=new JMenuItem("åœæ­¢");//åˆ›å»ºä¸€ä¸ªâ€œåœæ­¢â€èœå•é¡¹
+//		JRadioButtonMenuItem T_50 = new JRadioButtonMenuItem("æ—¶é—´X2",true);
+//		JRadioButtonMenuItem T_25 = new JRadioButtonMenuItem("æ—¶é—´X4");
 //		buttongroup.add(T_50);
-//		buttongroup.add(T_25);//°´Å¥×éÌí¼ÓÑ¡Ïî°´Å¥
+//		buttongroup.add(T_25);//æŒ‰é’®ç»„æ·»åŠ é€‰é¡¹æŒ‰é’®
 //		Vel_menu.add(T_50);
-//		Vel_menu.add(T_25);//½«Ñ¡Ïî°´Å¥Ìí¼Óµ½µ¯³öÊ½²Ëµ¥
+//		Vel_menu.add(T_25);//å°†é€‰é¡¹æŒ‰é’®æ·»åŠ åˆ°å¼¹å‡ºå¼èœå•
 //		Vel_menu.addSeparator();
 //		popup.add(start_menu);
-//		popup.addSeparator();//Ìí¼Ó·Ö¸ô·û
+//		popup.addSeparator();//æ·»åŠ åˆ†éš”ç¬¦
 //		popup.add(Vel_menu);
-//		popup.addSeparator();//Ìí¼Ó·Ö¸ô·û
-//		popup.add(stop_menu);//µ¯³öÊ½²Ëµ¥Ìí¼Ó²Ëµ¥Ïî
-//		poppanel.setComponentPopupMenu(popup);//ÉèÖÃÃæ°åÈİÆ÷Îªµ¯³öÊ½²Ëµ¥
+//		popup.addSeparator();//æ·»åŠ åˆ†éš”ç¬¦
+//		popup.add(stop_menu);//å¼¹å‡ºå¼èœå•æ·»åŠ èœå•é¡¹
+//		poppanel.setComponentPopupMenu(popup);//è®¾ç½®é¢æ¿å®¹å™¨ä¸ºå¼¹å‡ºå¼èœå•
 //		poppanel.addMouseListener(new MouseAdapter() {
-//		});//ÉèÖÃÃæ°åµÄÊó±ê¼àÌı
+//		});//è®¾ç½®é¢æ¿çš„é¼ æ ‡ç›‘å¬
 //		//poppanel.setBackground(Color.CYAN);
-//		this.add(poppanel);//µ±Ç°´°Ìå»òÕßÃæ°åÌí¼Ópanel
-//	}//µ¯³öÊ½²Ëµ¥·½·¨½áÊø
+//		this.add(poppanel);//å½“å‰çª—ä½“æˆ–è€…é¢æ¿æ·»åŠ panel
+//	}//å¼¹å‡ºå¼èœå•æ–¹æ³•ç»“æŸ
 	}

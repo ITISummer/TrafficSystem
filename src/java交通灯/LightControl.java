@@ -1,4 +1,4 @@
-package java½»Í¨µÆ;
+package javaäº¤é€šç¯;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -6,34 +6,34 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-/**¶ÔµÆ×é½øÐÐÖÇÄÜ»¯¿ØÖÆµÄÀà*/
+/**å¯¹ç¯ç»„è¿›è¡Œæ™ºèƒ½åŒ–æŽ§åˆ¶çš„ç±»*/
 @SuppressWarnings("serial")
 public class LightControl extends Canvas implements Runnable {
-//**********************************Àà(¹²Ïí)±äÁ¿Çø***********************************************
-	 /**¿ØÖÆµÆµÄÏß³ÌÔËÐÐµÄboolean±äÁ¿*/
+//**********************************ç±»(å…±äº«)å˜é‡åŒº***********************************************
+	 /**æŽ§åˆ¶ç¯çš„çº¿ç¨‹è¿è¡Œçš„booleanå˜é‡*/
 	 public static boolean RUN=true;
-	 /**µ¥¸öµÆµÄ¿í¶È*/
+	 /**å•ä¸ªç¯çš„å®½åº¦*/
 	 private static final int light_width=50;
-	 /**µ¥¸öµÆµÄ¸ß¶È*/
+	 /**å•ä¸ªç¯çš„é«˜åº¦*/
 	 private static final int light_height=50;
-	 /**¶Ô¼ÆÊ±ÅÆµÄÖØ»­ÏÞÖÆÊ±¼ä*/
+	 /**å¯¹è®¡æ—¶ç‰Œçš„é‡ç”»é™åˆ¶æ—¶é—´*/
 	 private static final int repaint_time=500;
-//**********************************Àà(¹²Ïí)±äÁ¿Çø***********************************************
+//**********************************ç±»(å…±äº«)å˜é‡åŒº***********************************************
 	
-//**********************************³ÉÔ±±äÁ¿Çø***************************************************
-	/**Ã¿Ò»×éµÆ×éµÄÊ±¼ä*/
+//**********************************æˆå‘˜å˜é‡åŒº***************************************************
+	/**æ¯ä¸€ç»„ç¯ç»„çš„æ—¶é—´*/
 	 private int time;
-	 /**¶ÔµÆ×éµÄÑ¡Ôñ*/
+	 /**å¯¹ç¯ç»„çš„é€‰æ‹©*/
 	 private String Lampgroup_choice;
-	 /**µÆµÄÑ¡Ôñ,±ÈÈçÖÐ¼äµÄµÆ»òÕß×ó±ßµÄµÆ*/
+	 /**ç¯çš„é€‰æ‹©,æ¯”å¦‚ä¸­é—´çš„ç¯æˆ–è€…å·¦è¾¹çš„ç¯*/
 	 private char light_choice;
-	 /**µÆ-×ó£¬µÆ-ÖÐ£¬µÆ-ÓÒ*/
+	 /**ç¯-å·¦ï¼Œç¯-ä¸­ï¼Œç¯-å³*/
 	 private Light  light_left, light_middle,light_right;
- //**********************************³ÉÔ±±äÁ¿Çø***************************************************
+ //**********************************æˆå‘˜å˜é‡åŒº***************************************************
 	 
-	 /**@1¡¢´«ÈëÒ»×éµÆ£¬°´×ó¡¢ÖÐ¡¢ÓÒË³Ðò£¬¶ÔÃ¿×éµÆ½øÐÐÏàÓ¦µÄ¿ØÖÆ
-	  * @2¡¢¸ø¶¨µÆµÄÊ±¼ä
-	  * @3¡¢¶ÔµÆ×éµÄÑ¡Ôñ£¨ÄÏ±±¡¢¶«Î÷£©*/
+	 /**@1ã€ä¼ å…¥ä¸€ç»„ç¯ï¼ŒæŒ‰å·¦ã€ä¸­ã€å³é¡ºåºï¼Œå¯¹æ¯ç»„ç¯è¿›è¡Œç›¸åº”çš„æŽ§åˆ¶
+	  * @2ã€ç»™å®šç¯çš„æ—¶é—´
+	  * @3ã€å¯¹ç¯ç»„çš„é€‰æ‹©ï¼ˆå—åŒ—ã€ä¸œè¥¿ï¼‰*/
 public LightControl(Light light_left,Light light_middle,Light light_right,String Lampgroup_choice,char light_choice,int time) {
 	this.light_left=light_left;
 	this.light_middle=light_middle;
@@ -41,110 +41,110 @@ public LightControl(Light light_left,Light light_middle,Light light_right,String
 	this.light_choice=light_choice;
 	this.Lampgroup_choice=Lampgroup_choice;
 	this.time=time;	
-}//Light_control()½áÊø
-	/**@»­ÄÏ±±µÆ*/
+}//Light_control()ç»“æŸ
+	/**@ç”»å—åŒ—ç¯*/
 public void paint_NS_Light_control(Graphics2D G) {
 	G.drawImage(getToolkit().getImage(light_left.getphoto()), light_left.x,light_left.y,light_width,light_height,this);
     G.drawImage(getToolkit().getImage(light_middle.getphoto()), light_middle.x,light_middle.y,light_width,light_height,this);
     G.drawImage(getToolkit().getImage(light_right.getphoto()), light_right.x,light_right.y,light_width,light_height,this);
     G.setColor(Color.BLACK);
-}//»­ÄÏ±±µÆµÄ·½·¨½áÊø
-	/**@»­¶«Î÷µÆ*/
+}//ç”»å—åŒ—ç¯çš„æ–¹æ³•ç»“æŸ
+	/**@ç”»ä¸œè¥¿ç¯*/
 public void paint_WE_Light_control(Graphics2D G) {
 	G.drawImage(getToolkit().getImage(light_left.getphoto()), light_left.x,light_left.y,light_width,light_height,this);
     G.drawImage(getToolkit().getImage(light_middle.getphoto()), light_middle.x,light_middle.y,light_width,light_height,this);
     G.drawImage(getToolkit().getImage(light_right.getphoto()), light_right.x,light_right.y,light_width,light_height,this);
     G.setColor(Color.BLACK);
-}//»­¶«Î÷µÆµÄ·½·¨½áÊø
-	/**ÖØÐ´paint()·½·¨*/
+}//ç”»ä¸œè¥¿ç¯çš„æ–¹æ³•ç»“æŸ
+	/**é‡å†™paint()æ–¹æ³•*/
 public void paint(Graphics g) {
 	Graphics2D G=(Graphics2D)g;
 	switch(this.light_choice) {
 case 'N':
-		paint_NS_Light_control(G);//µ÷ÓÃ»­ÄÏ±±µÆµÄµÄ·½·¨
-		//»­±±¼ÆÊ±°å
+		paint_NS_Light_control(G);//è°ƒç”¨ç”»å—åŒ—ç¯çš„çš„æ–¹æ³•
+		//ç”»åŒ—è®¡æ—¶æ¿
 	    G.fillRect(light_left.x+52, light_left.y, light_width, light_height);
 	    G.setColor(Color.RED);
-	    G.setFont(new Font("ËÎÌå",Font.BOLD,40));
+	    G.setFont(new Font("å®‹ä½“",Font.BOLD,40));
 	    G.drawString(time+" ", light_left.x+52,light_left.y+40 );
 	break;
 case 'S':
-		paint_NS_Light_control(G);//µ÷ÓÃ»­ÄÏ±±µÆµÄµÄ·½·¨
-		//»­ÄÏ¼ÆÊ±°å
+		paint_NS_Light_control(G);//è°ƒç”¨ç”»å—åŒ—ç¯çš„çš„æ–¹æ³•
+		//ç”»å—è®¡æ—¶æ¿
 	    G.fillRect(light_left.x-52, light_left.y, light_width, light_height);
 	    G.setColor(Color.RED);
-	    G.setFont(new Font("ËÎÌå",Font.BOLD,40));
+	    G.setFont(new Font("å®‹ä½“",Font.BOLD,40));
 	    G.drawString(time+" ", light_left.x-52,light_left.y+40 );
 	break;
 case 'E':
-		paint_WE_Light_control(G);//µ÷ÓÃ»­¶«Î÷µÆµÄµÄ·½·¨	 
-		//»­¶«¼ÆÊ±°å
+		paint_WE_Light_control(G);//è°ƒç”¨ç”»ä¸œè¥¿ç¯çš„çš„æ–¹æ³•	 
+		//ç”»ä¸œè®¡æ—¶æ¿
 		G.fillRect(light_left.x, light_left.y+52, light_width, light_height);
 	    G.setColor(Color.RED);
-	    G.setFont(new Font("ËÎÌå",Font.BOLD,40));
+	    G.setFont(new Font("å®‹ä½“",Font.BOLD,40));
 	    G.drawString(time+" ", light_left.x,light_left.y+90 );
 	break;
 case 'W':
-		paint_WE_Light_control(G);//µ÷ÓÃ»­¶«Î÷µÆµÄµÄ·½·¨
-		//»­Î÷¼ÆÊ±°å
+		paint_WE_Light_control(G);//è°ƒç”¨ç”»ä¸œè¥¿ç¯çš„çš„æ–¹æ³•
+		//ç”»è¥¿è®¡æ—¶æ¿
 	    G.fillRect(light_left.x, light_left.y-52, light_width, light_height);
 	    G.setColor(Color.RED);
-	    G.setFont(new Font("ËÎÌå",Font.BOLD,40));
+	    G.setFont(new Font("å®‹ä½“",Font.BOLD,40));
 	    G.drawString(time+" ", light_left.x,light_left.y-10 );
 	break;
 	
 	}
-}//paint()½áÊø
-	/**@¶ÔÃ¿×éµÆ½øÐÐÏàÓ¦¿ØÖÆµÄ¾ßÌå²Ù×÷
-	 * @ÕâÀïÊ¹ÓÃÇ¶Ì×switch*/
+}//paint()ç»“æŸ
+	/**@å¯¹æ¯ç»„ç¯è¿›è¡Œç›¸åº”æŽ§åˆ¶çš„å…·ä½“æ“ä½œ
+	 * @è¿™é‡Œä½¿ç”¨åµŒå¥—switch*/
 @Override
 public void run() {
-	String light_choice1="light_middle";//¶ÔµÆµÄÑ¡Ôñ£¬×óÖÐÓÒÈýÖÖ
+	String light_choice1="light_middle";//å¯¹ç¯çš„é€‰æ‹©ï¼Œå·¦ä¸­å³ä¸‰ç§
 	String light_choice2="stop";
 	while(RUN) {
-		switch(Lampgroup_choice) {//ÓÉÊµÀý»¯Ê±¸ø¶¨µÄ²ÎÊý¾ö¶¨
+		switch(Lampgroup_choice) {//ç”±å®žä¾‹åŒ–æ—¶ç»™å®šçš„å‚æ•°å†³å®š
 		case "NS":
-			switch(light_choice1) {//ÏÈÈÃ±±ºÍÄÏ²¿ÖÐ¼äµÆÏÔÊ¾ÂÌµÆ
+			switch(light_choice1) {//å…ˆè®©åŒ—å’Œå—éƒ¨ä¸­é—´ç¯æ˜¾ç¤ºç»¿ç¯
 			case "light_middle":
 			{
 				try {Thread.sleep(repaint_time);}catch(InterruptedException e) {e.printStackTrace();}
 				repaint();
 				this.time--;
 				if(this.time>3) {
-				light_left.status=Light.light_red;//ºì
-				light_middle.status=Light.light_green;//ÂÌ
+				light_left.status=Light.light_red;//çº¢
+				light_middle.status=Light.light_green;//ç»¿
 				
 				}
 				if(this.time<=3&&this.time>0) {
-					light_left.status=Light.light_yellow;//»Æ
-					light_middle.status=Light.light_yellow;//»Æ
+					light_left.status=Light.light_yellow;//é»„
+					light_middle.status=Light.light_yellow;//é»„
 				}
 				if(time==0) {
 					this.time=10;
-					light_left.status=Light.light_green;//ÂÌ
-					light_middle.status=Light.light_red;//ºì
+					light_left.status=Light.light_green;//ç»¿
+					light_middle.status=Light.light_red;//çº¢
 					light_choice1="light_left";
 				}
 			}
 				break;
-			case "light_left"://È»ºó±±ºÍÄÏ²¿×ó±ßµÆÏÔÊ¾ÂÌµÆ
+			case "light_left"://ç„¶åŽåŒ—å’Œå—éƒ¨å·¦è¾¹ç¯æ˜¾ç¤ºç»¿ç¯
 			{
 				try {Thread.sleep(repaint_time);}catch(InterruptedException e) {e.printStackTrace();}
 				repaint();
 				this.time--;
 				if(time>3) {
-				light_left.status=Light.light_green;//ÂÌ
-				light_middle.status=Light.light_red;//ºì
+				light_left.status=Light.light_green;//ç»¿
+				light_middle.status=Light.light_red;//çº¢
 				
 				}
 				if(time>0&&time<=3) {
-					light_left.status=Light.light_yellow;//»Æ
-					light_middle.status=Light.light_red;//¼ÌÐøÎªºì////////////////////////ÒÑ¸Ä
+					light_left.status=Light.light_yellow;//é»„
+					light_middle.status=Light.light_red;//ç»§ç»­ä¸ºçº¢////////////////////////å·²æ”¹
 				}
 				if(time==0) {
 					this.time=20;
-					light_left.status=Light.light_red;//ºì
-					light_middle.status=Light.light_red;//ºì
+					light_left.status=Light.light_red;//çº¢
+					light_middle.status=Light.light_red;//çº¢
 					light_choice1="stop";
 				}
 			}
@@ -155,19 +155,19 @@ public void run() {
 				repaint();
 				this.time--;
 				if(time>0&&time<=3) {
-					light_left.status=Light.light_red;//¼ÌÐøÎªºì////////////////////////ÒÑ¸Ä
-					light_middle.status=Light.light_yellow;//»Æ
+					light_left.status=Light.light_red;//ç»§ç»­ä¸ºçº¢////////////////////////å·²æ”¹
+					light_middle.status=Light.light_yellow;//é»„
 				}
 				if(this.time==0) {
 					time=10;
-					light_left.status=Light.light_red;//ºì
-					light_middle.status=Light.light_green;//ÂÌ
+					light_left.status=Light.light_red;//çº¢
+					light_middle.status=Light.light_green;//ç»¿
 					light_choice1="light_middle";
 					
 				}
 			}
 			break;
-			}//light switchÓï¾ä½áÊø
+			}//light switchè¯­å¥ç»“æŸ
 			break;
 		case "WE":
 				switch(light_choice2) {
@@ -177,18 +177,18 @@ public void run() {
 					repaint();
 					this.time--;
 					if(this.time>3) {
-					light_left.status=Light.light_red;//ºì
-					light_middle.status=Light.light_green;//ÂÌ
+					light_left.status=Light.light_red;//çº¢
+					light_middle.status=Light.light_green;//ç»¿
 					
 					}
 					if(this.time<=3&&this.time>0) {
-						light_left.status=Light.light_yellow;//»Æ
-						light_middle.status=Light.light_yellow;//»Æ
+						light_left.status=Light.light_yellow;//é»„
+						light_middle.status=Light.light_yellow;//é»„
 					}
 					if(this.time==0) {
 						this.time=10;
-						light_left.status=Light.light_green;//ÂÌ
-						light_middle.status=Light.light_red;//ºì
+						light_left.status=Light.light_green;//ç»¿
+						light_middle.status=Light.light_red;//çº¢
 						light_choice2="light_left";
 					}
 				}
@@ -199,18 +199,18 @@ public void run() {
 					repaint();
 					this.time--;
 					if(time>3) {
-					light_left.status=Light.light_green;//ÂÌ
-					light_middle.status=Light.light_red;//ºì
+					light_left.status=Light.light_green;//ç»¿
+					light_middle.status=Light.light_red;//çº¢
 					
 					}
 					if(time>0&&time<=3) {
-						light_left.status=Light.light_yellow;//»Æ
-						light_middle.status=Light.light_red;//¼ÌÐøÎªºì////////////////////////ÒÑ¸Ä
+						light_left.status=Light.light_yellow;//é»„
+						light_middle.status=Light.light_red;//ç»§ç»­ä¸ºçº¢////////////////////////å·²æ”¹
 					}
 					if(time==0) {
 						this.time=20;
-						light_left.status=Light.light_red;//ºì
-						light_middle.status=Light.light_red;//ºì
+						light_left.status=Light.light_red;//çº¢
+						light_middle.status=Light.light_red;//çº¢
 						light_choice2="stop";
 					}
 				}
@@ -221,29 +221,29 @@ public void run() {
 					repaint();
 					this.time--;
 					if(this.time>3) {
-						light_left.status=Light.light_red;//ºì
-						light_middle.status=Light.light_red;//ºì
+						light_left.status=Light.light_red;//çº¢
+						light_middle.status=Light.light_red;//çº¢
 						
 					}
 					if(time>0&&time<=3) {
-						light_left.status=Light.light_red;//¼ÌÐøÎªºì////////////////////ÒÑ¸Ä
-						light_middle.status=Light.light_yellow;//»Æ
+						light_left.status=Light.light_red;//ç»§ç»­ä¸ºçº¢////////////////////å·²æ”¹
+						light_middle.status=Light.light_yellow;//é»„
 					}
 					if(this.time==0) {
 						time=10;
-						light_left.status=Light.light_red;//ºì
-						light_middle.status=Light.light_green;//ÂÌ
+						light_left.status=Light.light_red;//çº¢
+						light_middle.status=Light.light_green;//ç»¿
 						light_choice2="light_middle";
 						
 					}
 				}
 				break;
-				}//light switchÓï¾ä½áÊø
+				}//light switchè¯­å¥ç»“æŸ
 				break;
-		}//Light_control switchÓï¾ä½áÊø
-		}//whileÑ­»·½áÊø
+		}//Light_control switchè¯­å¥ç»“æŸ
+		}//whileå¾ªçŽ¯ç»“æŸ
 		
-	}//run()·½·¨½áÊø	
+	}//run()æ–¹æ³•ç»“æŸ	
 }
 
 

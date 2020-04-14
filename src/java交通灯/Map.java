@@ -1,25 +1,25 @@
-package java½»Í¨µÆ;
+package javaäº¤é€šç¯;
 
 import java.awt.Color;
 import javax.swing.JFrame;
 
-/**Ê®×ÖÂ·¿ÚÉè¼ÆÍ¼*/
+/**åå­—è·¯å£è®¾è®¡å›¾*/
 @SuppressWarnings("serial")
 public class Map extends JFrame{
-	public Map() {//ÊµÏÖ¹¹Ôì·½·¨
-			initialize();//µ÷ÓÃ³õÊ¼»¯·½·¨£¬¶Ô½çÃæ½øĞĞÉè¼Æ
-			MyCanvas mycanvas=new MyCanvas();//µ÷ÓÃ»­²¼ÀàÊµÀıÒ»¸ö¶ÔÏó
-			this.getContentPane().add(mycanvas);//Ìí¼Ó»­²¼	
+	public Map() {//å®ç°æ„é€ æ–¹æ³•
+			initialize();//è°ƒç”¨åˆå§‹åŒ–æ–¹æ³•ï¼Œå¯¹ç•Œé¢è¿›è¡Œè®¾è®¡
+			MyCanvas mycanvas=new MyCanvas();//è°ƒç”¨ç”»å¸ƒç±»å®ä¾‹ä¸€ä¸ªå¯¹è±¡
+			this.getContentPane().add(mycanvas);//æ·»åŠ ç”»å¸ƒ	
 			mycanvas.setSize(this.getWidth(),this.getHeight());
 		 	this.setLayout(null);
 		    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	    
-	}//¹¹Ôì·½·¨½áÊø
-	/**³õÊ¼»¯ÒÀ¸½µÄ´°Ìå*/
+	}//æ„é€ æ–¹æ³•ç»“æŸ
+	/**åˆå§‹åŒ–ä¾é™„çš„çª—ä½“*/
 public void initialize() {
-			this.setTitle("Ê®×ÖÂ·¿Ú½»Í¨ĞÅºÅµÆ¹ÜÀíÏµÍ³");
-			this.setBounds(500, 130, 1200, 900);//ÉèÖÃ´°Ìå´óĞ¡
-			this.setBackground(new Color(147,147,147));//ÉèÖÃ´°Ìå±³¾°É«
-			this.setVisible(true);//ÉèÖÃ´°Ìå¿É¼û
-			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//ÉèÖÃ´°Ìå¹Ø±ÕÄ£Ê½
-	}//³õÊ¼»¯·½·¨½áÊø
-}//³õÊ¼»¯´°Ìå·½·¨½áÊø
+			this.setTitle("åå­—è·¯å£äº¤é€šä¿¡å·ç¯ç®¡ç†ç³»ç»Ÿ");
+			this.setBounds(500, 130, 1200, 900);//è®¾ç½®çª—ä½“å¤§å°
+			this.setBackground(new Color(147,147,147));//è®¾ç½®çª—ä½“èƒŒæ™¯è‰²
+			this.setVisible(true);//è®¾ç½®çª—ä½“å¯è§
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//è®¾ç½®çª—ä½“å…³é—­æ¨¡å¼
+	}//åˆå§‹åŒ–æ–¹æ³•ç»“æŸ
+}//åˆå§‹åŒ–çª—ä½“æ–¹æ³•ç»“æŸ

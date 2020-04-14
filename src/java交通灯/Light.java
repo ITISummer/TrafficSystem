@@ -1,28 +1,28 @@
-package java½»Í¨µÆ;
+package javaäº¤é€šç¯;
 public class Light {
-	/**µÆÑÕÉ«³£Á¿¡ª¡ª»ÆÉ«*/
+	/**ç¯é¢œè‰²å¸¸é‡â€”â€”é»„è‰²*/
 	public static final int light_yellow=0;
-	/**µÆÑÕÉ«³£Á¿¡ª¡ªºìÉ«*/
+	/**ç¯é¢œè‰²å¸¸é‡â€”â€”çº¢è‰²*/
 	public static final int light_red=1;
-	/**µÆÑÕÉ«³£Á¿¡ª¡ªÂÌÉ«*/
+	/**ç¯é¢œè‰²å¸¸é‡â€”â€”ç»¿è‰²*/
 	public static final int light_green=2;
-	/**´æ·ÅµÆÍ¼Æ¬µÄÂ·¾¶Êı×é 0-»Æ£¬1-ºì£¬2-ÂÌ*/
-	String light_img[]= {"src/Í¼Æ¬/»Æ.png","src/Í¼Æ¬/ºì.png","src/Í¼Æ¬/ÂÌ.png"};
-	/**µÆÔÚÃæ°åµÄÎ»ÖÃ*/
+	/**å­˜æ”¾ç¯å›¾ç‰‡çš„è·¯å¾„æ•°ç»„ 0-é»„ï¼Œ1-çº¢ï¼Œ2-ç»¿*/
+	String light_img[]= {"src/å›¾ç‰‡/é»„.png","src/å›¾ç‰‡/çº¢.png","src/å›¾ç‰‡/ç»¿.png"};
+	/**ç¯åœ¨é¢æ¿çš„ä½ç½®*/
   	int x,y;
-  	/**µÆµÄ×´Ì¬£¬ÈıÖÖ(0-»Æ£¬1-ºì£¬2-ÂÌ)*/
+  	/**ç¯çš„çŠ¶æ€ï¼Œä¸‰ç§(0-é»„ï¼Œ1-çº¢ï¼Œ2-ç»¿)*/
   	int status;
-/**¶ÔÄÚ³õÊ¼»¯Ê±ÉèÖÃµÄµÆµÄ×´Ì¬*/
+/**å¯¹å†…åˆå§‹åŒ–æ—¶è®¾ç½®çš„ç¯çš„çŠ¶æ€*/
 public Light(int x,int y,int status) {
   		this.x=x;                
   		this.y=y;
   		this.status=status;
 }
-/**µÃµ½ºìÂÌµÆÍ¼Æ¬*/
+/**å¾—åˆ°çº¢ç»¿ç¯å›¾ç‰‡*/
 public String getphoto() {
 	return this.light_img[status];
-}//getphoto()½áÊø
-/**¶ÔÍâµÃµ½µÆµÄ×´Ì¬*/
+}//getphoto()ç»“æŸ
+/**å¯¹å¤–å¾—åˆ°ç¯çš„çŠ¶æ€*/
 public int get_status() {
 	return this.status;
 }
