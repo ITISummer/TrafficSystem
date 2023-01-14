@@ -1,3 +1,7 @@
+# Stats
+
+![Alt](https://repobeats.axiom.co/api/embed/1ca581df0cdf8c66dfbbfc71415c002a86999e77.svg "Repobeats analytics image")
+
 # Traffic-System
 Hello everyone, I am a sophomore student.My major is computer science and technology, 
 this project is a course bonus project design assigned by our teacher, 
